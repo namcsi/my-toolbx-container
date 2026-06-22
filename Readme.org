@@ -1,0 +1,29 @@
+
+* Guid to building and running container image via toolbox
+
+Command to build image
+
+#+begin_src sh
+podman build --tag localhost/my-fedora-toolbox:44 .
+#+end_src
+
+Command to create toolbox image
+
+#+begin_src sh
+toolbox create --image localhost/my-fedora-toolbox:44
+#+end_src
+
+After that, the toolbox can be entered
+
+#+begin_export html
+toolbox enter my-fedora-toolbox-44
+#+end_export
+
+If a container with the same name was entered previously via toolbox, you need to stop and remove it before re-createing the toolbox image, as multiple images of the same name are not allowed.
+
+#+begin_export html
+podman stop my-fedora-toolbox-44
+podman rm my-fedora-toolbox-44
+#+end_export
+
+All of these commands are wrapped up in the install.sh shell script.
