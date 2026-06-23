@@ -27,7 +27,7 @@ RUN dnf update -y && \
     nodejs \
     pipx \
     # EMACS
-    emacs \
+    emacs-pgtk \
     direnv \
     maildir-utils \
     aspell \
